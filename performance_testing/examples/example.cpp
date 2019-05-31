@@ -11,9 +11,13 @@ static void clobber() {
 
 static void bm_create(benchmark::State &state) {
     while (state.KeepRunning()) {
-        std::vector<int> *v = new std::vector<int>(1000);
+// heaptrack allocation; uncomment for heaptrack test
+//        std::vector<int> *v = new std::vector<int>(1000);
+        std::vector<int> v;  // perf example; comment for heaptrack
         escape(&v);
-        delete v;
+        (void) v;            // perf example; comment for heaptrack
+// heaptrack free; uncomment for heaptrack test
+//        delete v;
     }
 }
 BENCHMARK(bm_create);
