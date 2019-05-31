@@ -1,0 +1,33 @@
+\section{Инструменты и практика}
+
+\begin{frame}{Что будем использовать мы?}
+	\begin{itemize}
+%=================================================================
+		\item \textbf{Google Benchmark} -- библиотека для микробенчмаркинга \href{https://github.com/google/benchmark}{\beamerbutton{GitHub}}
+		\begin{block}{Важно!}
+			В системе должна присутствовать или быть собрана библиотека pthread. Так же убедитесь, что присутствуют утилиты taskset и cpupower.
+		\end{block}
+%=================================================================	
+		\item \textbf{Perf tools} -- профилирование 
+		\begin{columns}
+			\begin{column}{.4\textwidth}
+				\setbeamercolor{block title}{use=structure,fg=white,bg=orange}
+				\begin{block}{Пакеты для Ubuntu}
+					linux-tools-generic linux-tools
+				\end{block}
+			\end{column}
+			\begin{column}{.5\textwidth}
+				\setbeamercolor{block title}{use=structure,fg=white,bg=blue}
+				\begin{block}{Пакет для Archlinux и Fedora}
+					perf
+				\end{block}
+			\end{column}
+		\end{columns}
+%=================================================================
+		\item \textbf{Heaptrack} -- учет расхода памяти
+		\begin{block}{Пакеты для Ubuntu, Archlinux, Fedora}
+			heaptrack heaptrack\_gui
+		\end{block}
+	\end{itemize}
+
+\end{frame}
